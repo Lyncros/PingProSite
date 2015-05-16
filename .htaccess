@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+#Redirecciono para que siempre tengamos www antes de la url
+RewriteCond %{HTTP_HOST} ^necesitounpro\.com$ [NC]
+RewriteRule ^(.*)$ http://www.pingpro.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^pingpro\.com$ [NC]
+RewriteRule ^(.*)$ http://www.pingpro.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.necesitounpro\.com$ [NC]
+RewriteRule ^(.*)$ http://www.pingpro.com/$1 [L,R=301]
