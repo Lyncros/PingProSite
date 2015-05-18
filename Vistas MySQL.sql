@@ -23,5 +23,8 @@ FROM `Seguimiento` as s
 GROUP BY `Pro Id`
 ORDER BY `Pedidos Recibidos` DESC
 
+/*Todo lo que hizo un pro:*/
+SELECT * FROM `Seguimiento` WHERE `Pro Id` = 1
+
 
 Para usar a futuro para separar por mes: EXTRACT(YEAR_MONTH FROM s.fecha_pedido)
